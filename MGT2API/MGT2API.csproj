@@ -17,10 +17,11 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\..\..\..\..\Program Files %28x86%29\Steam\steamapps\common\Mad Games Tycoon 2\BepInEx\plugins\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\..\..\..\..\Program Files %28x86%29\Steam\steamapps\common\Mad Games Tycoon 2\BepInEx\plugins\MGT2API.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -31,6 +32,30 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Mad Games Tycoon 2\BepInEx\core\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Mad Games Tycoon 2\Mad Games Tycoon 2_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Mad Games Tycoon 2\Mad Games Tycoon 2_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="BepInEx">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Mad Games Tycoon 2\BepInEx\core\BepInEx.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Mad Games Tycoon 2\BepInEx\core\Mono.Cecil.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MonoMod.Utils">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Mad Games Tycoon 2\BepInEx\core\MonoMod.Utils.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -39,13 +64,66 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Mad Games Tycoon 2\Mad Games Tycoon 2_Data\Managed\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Mad Games Tycoon 2\Mad Games Tycoon 2_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Mad Games Tycoon 2\Mad Games Tycoon 2_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Mad Games Tycoon 2\Mad Games Tycoon 2_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Mad Games Tycoon 2\Mad Games Tycoon 2_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Mad Games Tycoon 2\Mad Games Tycoon 2_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Mad Games Tycoon 2\Mad Games Tycoon 2_Data\Managed\UnityEngine.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Difficulty\Common\ICustomMultiplier.cs" />
+    <Compile Include="Difficulty\CoreAdjustments\Game\GameSalesBasedOnRealisticPowerAndSalesMultiplier.cs" />
+    <Compile Include="Difficulty\CoreAdjustments\Game\GameSalesBasedOnDifficultyMultiplier.cs" />
+    <Compile Include="Difficulty\CoreAdjustments\Game\GameSalesCompetitionImpactMultiplier.cs" />
+    <Compile Include="Difficulty\CoreAdjustments\Game\GameSalesBasedOnIpPopularityMultiplier.cs" />
+    <Compile Include="Difficulty\CoreAdjustments\Game\GameReviewCalcMultiplier.cs" />
+    <Compile Include="Difficulty\DifficultyAPI.cs" />
+    <Compile Include="Difficulty\CoreAdjustments\Game\GameBaseCostMultiplier.cs" />
+    <Compile Include="Difficulty\CoreAdjustments\IpPoints\IpPointsAdditionOnGameReleaseMultiplier.cs" />
+    <Compile Include="Difficulty\CoreAdjustments\IpPoints\IpPointsAdditionOnSellPerWeekMultiplier.cs" />
+    <Compile Include="Difficulty\CoreAdjustments\GamePass\GamePassSubsDistributionMultiplier.cs" />
+    <Compile Include="Difficulty\CoreAdjustments\GameEngine\EngineDevCostMultiplier.cs" />
+    <Compile Include="Difficulty\CoreAdjustments\Contract\ContractShortAssignmentMultiplier.cs" />
+    <Compile Include="Difficulty\Hooks\Core\Game\CalcReviewHooks.cs" />
+    <Compile Include="Difficulty\Hooks\Core\Game\SellGameHooks.cs" />
+    <Compile Include="Difficulty\Hooks\Core\IpPoints\AddIpPointsReleaseHooks.cs" />
+    <Compile Include="Difficulty\Hooks\Core\IpPoints\SellAllGamesHooks.cs" />
+    <Compile Include="Difficulty\Hooks\Core\Game\GetBaseCostOfGamesHooks.cs" />
+    <Compile Include="Difficulty\Hooks\Core\GamePass\DistributeGamePassSubscriptionsOnServerHooks.cs" />
+    <Compile Include="Difficulty\Hooks\Core\GameEngine\GetDevCostsForEngineHooks.cs" />
+    <Compile Include="Difficulty\Hooks\Core\Contract\ContractShortAssignmentHooks.cs" />
+    <Compile Include="Difficulty\Todo.cs" />
     <Compile Include="MGT2API.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="MainGame\" />
+    <Folder Include="Core\" />
+    <Folder Include="Difficulty\Hooks\Mod\" />
+    <Folder Include="Difficulty\ModAdjustments\" />
+    <Folder Include="Difficulty\Utilities\" />
     <Folder Include="UI\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
