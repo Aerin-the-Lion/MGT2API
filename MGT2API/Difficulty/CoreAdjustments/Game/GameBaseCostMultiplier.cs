@@ -2,8 +2,12 @@
 
 namespace MGT2API.Difficulty.Adjustments
 {
+    /// <summary>
     /// Manages the custom multiplier for the base cost of games.
+    /// The base cost of games refers to the cost of creating games when self-publishing games.
     /// [JP] ゲームの基本コストに適用するカスタム乗数を管理します。
+    /// ここでいうゲームの基本コストとは、ゲーム自社バブリッシングの際のゲーム作成コストのことです。
+    /// </summary>
     public sealed class GameBaseCostMultiplier : ICustomMultiplier
     {
         private static GameBaseCostMultiplier instance;

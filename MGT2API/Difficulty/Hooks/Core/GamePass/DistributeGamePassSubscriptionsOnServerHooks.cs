@@ -32,7 +32,7 @@ namespace MGT2API.Difficulty.Hooks
 
             try
             {
-                GamePassSubscriptionManager.DistributeSubscriptionsOnServer(__instance);
+                __instance = GamePassSubscriptionManager.DistributeSubscriptionsOnServer(__instance);
             }
             catch (Exception ex)
             {
@@ -56,7 +56,7 @@ namespace MGT2API.Difficulty.Hooks
         {
             private static gamepassScript instance;
 
-            public static void DistributeSubscriptionsOnServer(gamepassScript instance)
+            public static gamepassScript DistributeSubscriptionsOnServer(gamepassScript instance)
             {
                 GamePassSubscriptionManager.instance = instance;
 
@@ -64,7 +64,7 @@ namespace MGT2API.Difficulty.Hooks
                 if (!IsGamePassActive)
                 {
                     GamePassSubscriptions = 0L; //gamePassSubscriptions
-                    return;
+                    return instance;
                 }
 
                 long initialSubscriptions = GamePassSubscriptions;
@@ -78,6 +78,7 @@ namespace MGT2API.Difficulty.Hooks
 
                 // Calculate the difference in subscriptions from last week
                 GamePassSubscriptionLastWeek = GamePassSubscriptions - initialSubscriptions;
+                return GamePassSubscriptionManager.instance;
             }
 
             private static long CalculateSubscriptionAdjustment(long subscriptions)
@@ -157,7 +158,6 @@ namespace MGT2API.Difficulty.Hooks
                         //GamePassSubscriptions -= GamePassSubscriptions / (11L - priceChange);
                     }
                 }
-
                 GamePassSubscriptionPriceOld = GamePassSubscriptionPrice;
             }
 

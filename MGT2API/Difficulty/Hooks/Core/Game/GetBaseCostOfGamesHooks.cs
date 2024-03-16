@@ -14,7 +14,9 @@ namespace MGT2API.Difficulty.Hooks
     {
         /// <summary>
         /// Patches the custom multiplier for the base cost of games.
+        /// The base cost of games refers to the cost of creating games when self-publishing games.
         /// [JP] ゲームの基本コストに適用するカスタム乗数をパッチします。
+        /// ここでいうゲームの基本コストとは、ゲーム自社バブリッシングの際のゲーム作成コストのことです。
         /// </summary>
         /// <param name="__instance"></param>
         /// <param name="__result"></param>

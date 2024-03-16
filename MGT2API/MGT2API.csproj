@@ -108,6 +108,7 @@
     <Compile Include="Difficulty\CoreAdjustments\GameEngine\EngineDevCostMultiplier.cs" />
     <Compile Include="Difficulty\CoreAdjustments\Contract\ContractShortAssignmentMultiplier.cs" />
     <Compile Include="Difficulty\Hooks\Core\Game\CalcReviewHooks.cs" />
+    <Compile Include="Difficulty\Hooks\Core\Game\SellGameHooks - コピー.cs" />
     <Compile Include="Difficulty\Hooks\Core\Game\SellGameHooks.cs" />
     <Compile Include="Difficulty\Hooks\Core\IpPoints\AddIpPointsReleaseHooks.cs" />
     <Compile Include="Difficulty\Hooks\Core\IpPoints\SellAllGamesHooks.cs" />
